@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ProjectForm from "./components/ProjectForm";
+import ProjectList from "./components/ProjectList";
+import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
+import DailyTotal from "./components/DailyTotal";
+import { ProjectProvider } from "./components/ProjectContext"; 
+import './App.css'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ProjectProvider>
+      <div className="App">
+        <h1>Project Management App</h1>
+        <ProjectForm />
+        <ProjectList />
+        <TaskForm />
+        <TaskList />
+        <DailyTotal />
+      </div>
+    </ProjectProvider>
   );
-}
+};
 
 export default App;
